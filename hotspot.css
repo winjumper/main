@@ -1,0 +1,97 @@
+.elementor-hotspot-container {
+    position: relative;
+    width: 100%;
+}
+
+.elementor-hotspot-image-container {
+    position: relative;
+    width: 100%;
+}
+
+.elementor-hotspot-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.elementor-hotspot-point-wrapper {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.elementor-hotspot-point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FF0000;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.2);
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.elementor-hotspot-point:hover {
+    animation: none;
+    transform: scale(1.2);
+}
+
+.elementor-hotspot-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin-bottom: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.elementor-hotspot-tooltip:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid white;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.elementor-hotspot-point:hover + .elementor-hotspot-tooltip,
+.elementor-hotspot-tooltip:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.elementor-hotspot-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.elementor-hotspot-description {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
